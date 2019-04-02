@@ -9,3 +9,7 @@ inference2 = 'inference2 demo';
 inference2 = 20190403;
 // 最佳通用类型推断，找到一个最适合的类型
 var inference3 = [0, 1, null];
+// 上下文推断
+window.onmousedown = function (mouseEvent) {
+    console.log(mouseEvent.target);
+};

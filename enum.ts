@@ -53,11 +53,40 @@ enum Mix {
 };
 
 // 外部枚举类型
-declare enum Directions{
-    Up,
-    Down,
-    Left,
-    Right
+// declare enum Directions{
+//     Up,
+//     Down,
+//     Left,
+//     Right
+// }
+// let directionns = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+
+enum Repeat {
+    one = 2,
+    two = 3,
+    three = 2
+};
+console.log(Repeat[2]); // console => three
+
+
+enum ShapeKind {
+    Circle,
+    Square,
 }
-let directionns = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+
+interface Circle {
+    kind: ShapeKind.Circle;
+    radius: number;
+}
+
+interface Square {
+    kind: ShapeKind.Square;
+    sideLength: number;
+}
+
+let cc: Circle = {
+    kind: ShapeKind.Square,
+    //    ~~~~~~~~~~~~~~~~ Error!
+    radius: 100,
+}
 

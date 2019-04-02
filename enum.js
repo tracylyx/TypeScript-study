@@ -53,4 +53,29 @@ var Mix;
     Mix["Day"] = "Wednesday";
 })(Mix || (Mix = {}));
 ;
-var directionns = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+// 外部枚举类型
+// declare enum Directions{
+//     Up,
+//     Down,
+//     Left,
+//     Right
+// }
+// let directionns = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+var Repeat;
+(function (Repeat) {
+    Repeat[Repeat["one"] = 2] = "one";
+    Repeat[Repeat["two"] = 3] = "two";
+    Repeat[Repeat["three"] = 2] = "three";
+})(Repeat || (Repeat = {}));
+;
+console.log(Repeat[2]); // console => three
+var ShapeKind;
+(function (ShapeKind) {
+    ShapeKind[ShapeKind["Circle"] = 0] = "Circle";
+    ShapeKind[ShapeKind["Square"] = 1] = "Square";
+})(ShapeKind || (ShapeKind = {}));
+var cc = {
+    kind: ShapeKind.Square,
+    //    ~~~~~~~~~~~~~~~~ Error!
+    radius: 100,
+};
